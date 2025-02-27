@@ -1,31 +1,64 @@
+body {
+  position: relative;
+  overflow-x: hidden; /* Allow horizontal scrolling */
+}
+
 body:before {
   content: '';
   display: block;
-  position: absolute;
+  position: fixed; /* Fix it in place */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 200%;
-  height: 200%;
-  z-index: -1;
+  width: 500vw;  /* Expand the width to fill the screen */
+  height: 500vh; /* Expand the height to fill the screen */
+  z-index: -1; /* Ensure it's behind content */
   background: repeating-conic-gradient(
-      var(--color-bg) 0deg 15deg,
-      var(--color-bg-second) 15deg 30deg
+    var(--color-bg) 0deg 15deg,
+    var(--color-bg-second) 15deg 30deg
   );
   transition: opacity 0.5s ease-in-out;
   opacity: 0;  /* Initially hidden */
+  pointer-events: none; /* Don't let the background block other interactions */
 }
 
 body.is-playing:before {
-  animation: rays infinite 45s linear;
+  animation: rays infinite 45s linear, changeColors 8s infinite ease-in-out;
   opacity: 1;  /* Show when playing */
 }
 
 @keyframes rays {
   from {
-      transform: translate(-50%, -50%) rotate(0);
+    transform: translate(-50%, -50%) rotate(0);
   }
   to {
-      transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes changeColors {
+  0% {
+    --color-bg: #ff6b6b;
+    --color-bg-second: #f7a800;
+  }
+  20% {
+    --color-bg: #4ecdc4;
+    --color-bg-second: #ffe66d;
+  }
+  40% {
+    --color-bg: #93d9ff;  /* Teal */
+    --color-bg-second: #ffb6b9;  /* Soft Coral */
+  }
+  60% {
+    --color-bg: #d8a5ee;  /* Rich Purple */
+    --color-bg-second: #ece4c3;  /* Soft Yellow */
+  }
+  80% {
+    --color-bg: #a1c4fd;
+    --color-bg-second: #c2e9fb;
+  }
+  100% {
+    --color-bg: #ff9e9e;
+    --color-bg-second: #ffdd93;
   }
 }
