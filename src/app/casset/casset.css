@@ -26,11 +26,9 @@
   }
   
   body {
-   
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     color: var(--color-text);
     font-family: 'Kanit', sans-serif;
   }

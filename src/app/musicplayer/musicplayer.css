@@ -1,0 +1,31 @@
+body:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  background: repeating-conic-gradient(
+      var(--color-bg) 0deg 15deg,
+      var(--color-bg-second) 15deg 30deg
+  );
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;  /* Initially hidden */
+}
+
+body.is-playing:before {
+  animation: rays infinite 45s linear;
+  opacity: 1;  /* Show when playing */
+}
+
+@keyframes rays {
+  from {
+      transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
