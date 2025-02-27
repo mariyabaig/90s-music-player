@@ -12,7 +12,7 @@ const songs = [
         description: "An indie folk song about love and adventure, with a catchy ukulele tune.",
         src: "/assets/Riptide.mp3",
         image: "/assets/riptide.jpg",
-        bgColor: "#782A2A"
+        bgColor: "#F2A7D1" // Pastel Pink
     },
     {
         title: "Budapest",
@@ -20,7 +20,7 @@ const songs = [
         description: "A folk-pop anthem about leaving behind material possessions for love.",
         src: "/assets/Budapest.mp3",
         image: "/assets/budapest.jpg",
-        bgColor: "#5F171B"
+        bgColor: "#A1C9F1" // Pastel Blue
     },
     {
         title: "Remember When",
@@ -28,7 +28,7 @@ const songs = [
         description: "A heartfelt country ballad reflecting on love, family, and life's journey.",
         src: "/assets/Remember When.mp3",
         image: "/assets/remember.jpg",
-        bgColor: "#5B88B5"
+        bgColor: "#F4E1D2" // Pastel Peach
     },
     {
         title: "Tangerine",
@@ -36,7 +36,7 @@ const songs = [
         description: "A groovy, synth-heavy track with nostalgic lyrics and vibrant energy.",
         src: "/assets/Tangerine.mp3",
         image: "/assets/tangerine.jpg",
-        bgColor: "#B37100"
+        bgColor: "#F2D98F" // Pastel Yellow
     },
     {
         title: "Ophelia",
@@ -44,7 +44,7 @@ const songs = [
         description: "A melancholic yet uplifting folk-rock song with poetic lyrics.",
         src: "/assets/Ophelia.mp3",
         image: "/assets/ophelia.jpg",
-        bgColor: "#9E9062"
+        bgColor: "#A9CBB7" // Pastel Green
     },
     {
         title: "Where The Skies Are Blue",
@@ -52,7 +52,7 @@ const songs = [
         description: "A soothing acoustic tune about hope, love, and finding happiness.",
         src: "/assets/Where The Skies Are Blue.mp3",
         image: "/assets/skies.jpg",
-        bgColor: "#535373"
+        bgColor: "#B8C8E4" // Light Pastel Lavender
     }
 ];
 
@@ -84,29 +84,29 @@ const Musicplayer = () => {
             document.body.classList.remove('is-playing');
         }
     }, [isPlaying]);
-    
 
     useEffect(() => {
-        const updateProgress = () => {
-            const current = audioRef.current.currentTime;
-            const total = audioRef.current.duration;
-            setCurrentTime(current);
-            setDuration(total);
-            setProgress(total ? (current / total) * 100 : 0);
-        };
-
-        if (audioRef.current) {
-            audioRef.current.addEventListener('timeupdate', updateProgress);
-            audioRef.current.addEventListener('loadedmetadata', () => setDuration(audioRef.current.duration));
+        const audio = audioRef.current;
+        
+        if (audio) {
+            const updateProgress = () => {
+                const current = audio.currentTime;
+                const total = audio.duration;
+                setCurrentTime(current);
+                setDuration(total);
+                setProgress(total ? (current / total) * 100 : 0);
+            };
+    
+            audio.addEventListener('timeupdate', updateProgress);
+            audio.addEventListener('loadedmetadata', () => setDuration(audio.duration));
+    
+            return () => {
+                audio.removeEventListener('timeupdate', updateProgress);
+                audio.removeEventListener('loadedmetadata', () => setDuration(audio.duration));
+            };
         }
-
-        return () => {
-            if (audioRef.current) {
-                audioRef.current.removeEventListener('timeupdate', updateProgress);
-                audioRef.current.removeEventListener('loadedmetadata', () => setDuration(audioRef.current.duration));
-            }
-        };
     }, []);
+    
 
     const handleProgressChange = (e) => {
         const newTime = (e.target.value / 100) * audioRef.current.duration;
@@ -138,7 +138,6 @@ const Musicplayer = () => {
         setIsPlaying(true);
     };
     
-
     const handlePrev = () => {
         setCurrentSongIndex((prevIndex) =>
             prevIndex === 0 ? songs.length - 1 : prevIndex - 1
@@ -152,7 +151,7 @@ const Musicplayer = () => {
             <div
                 className="flex flex-col items-center justify-center p-8 h-full mt-32 border-2 rounded-2xl border-gray-400 transition-all duration-500"
                 style={{ 
-                    background: `linear-gradient(135deg, ${bgGradient} 0%, #1e1e1e 100%)`,
+                    background: `linear-gradient(135deg, ${bgGradient} 0%, #E5D8D8 100%)`, 
                     transition: 'background 1s ease-in-out'
                 }}
             >
@@ -161,8 +160,6 @@ const Musicplayer = () => {
                     alt={songs[currentSongIndex].title}
                     className="w-72 h-72 rounded-lg shadow-lg mb-4"
                 />
-
-
                 <h2 className="text-2xl font-bold text-blue-100">{songs[currentSongIndex].title}</h2>
                 <h3 className="text-lg text-white">{songs[currentSongIndex].singer}</h3>
                 <p className="text-sm text-white italic text-center w-72 mt-2">
