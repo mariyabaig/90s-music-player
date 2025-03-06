@@ -17,7 +17,7 @@ const Casset = () => {
                 <div className="cassette__line"></div>
 
                 <div className="label">
-                    <div className="title">love songs</div>
+                    <div className="title">volume 1</div>
                     <div className="side">A</div>
                     <div className="cutout">
                         <div className="reel">
@@ -37,7 +37,7 @@ const Casset = () => {
                     <div className="duration">90</div>
 
                     <div className="caption">
-                        all the love songs for you 
+                        awesome mix of all your fav songs!
                     </div>
                 </div>
 
