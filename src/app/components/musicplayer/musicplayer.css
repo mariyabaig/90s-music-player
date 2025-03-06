@@ -1,0 +1,105 @@
+body {
+  position: relative;
+  overflow-x: hidden; /* Allow horizontal scrolling */
+}
+
+body:before {
+  content: '';
+  display: block;
+  position: fixed; /* Fix it in place */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500vw;  /* Expand the width to fill the screen */
+  height: 500vh; /* Expand the height to fill the screen */
+  z-index: -1; /* Ensure it's behind content */
+  background: repeating-conic-gradient(
+    #f9d8d8 0deg 15deg, /* Light pastel pink */
+    #d8f3d8 15deg 30deg, /* Pastel green */
+    #fce4b4 30deg 45deg, /* Soft pastel yellow */
+    #bcd6f7 45deg 60deg, /* Light pastel blue */
+    #f9e0ec 60deg 75deg, /* Light pastel purple */
+    #ffb5b5 75deg 90deg  /* Soft pastel coral */
+  );
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transitions */
+  opacity: 0;  /* Initially hidden */
+  pointer-events: none; /* Don't let the background block other interactions */
+}
+
+body.is-playing:before {
+  animation: rotateAndChangeColors 45s infinite linear, pastelColors 12s infinite ease-in-out;
+  opacity: 1;  /* Show when playing */
+}
+
+@keyframes rotateAndChangeColors {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pastelColors {
+  0% {
+    background: repeating-conic-gradient(
+      #f9d8d8 0deg 15deg, 
+      #d8f3d8 15deg 30deg, 
+      #fce4b4 30deg 45deg, 
+      #bcd6f7 45deg 60deg, 
+      #f9e0ec 60deg 75deg, 
+      #ffb5b5 75deg 90deg
+    );
+  }
+  20% {
+    background: repeating-conic-gradient(
+      #e2b8d0 0deg 15deg, /* Soft pink */
+      #b3e2d0 15deg 30deg, /* Light seafoam green */
+      #ffedc7 30deg 45deg, /* Butter yellow */
+      #a8c8f7 45deg 60deg, /* Baby blue */
+      #e1d6f2 60deg 75deg, /* Lilac */
+      #ffc7c7 75deg 90deg  /* Pastel peach */
+    );
+  }
+  40% {
+    background: repeating-conic-gradient(
+      #ffd1dc 0deg 15deg, /* Light blush pink */
+      #b0e4d9 15deg 30deg, /* Mint green */
+      #fff5b8 30deg 45deg, /* Soft lemon */
+      #c3daf7 45deg 60deg, /* Powder blue */
+      #f7d7f7 60deg 75deg, /* Lavender */
+      #ffb3b3 75deg 90deg  /* Soft coral */
+    );
+  }
+  60% {
+    background: repeating-conic-gradient(
+      #f7e1f2 0deg 15deg, /* Pastel lavender */
+      #d1f0e0 15deg 30deg, /* Pale green */
+      #ffedd0 30deg 45deg, /* Light butter yellow */
+      #aecaf7 45deg 60deg, /* Soft blue */
+      #f6d3f9 60deg 75deg, /* Lilac lavender */
+      #fcb8b8 75deg 90deg  /* Blush pink */
+    );
+  }
+  80% {
+    background: repeating-conic-gradient(
+      #f9d8d8 0deg 15deg, 
+      #d8f3d8 15deg 30deg, 
+      #fce4b4 30deg 45deg, 
+      #bcd6f7 45deg 60deg, 
+      #f9e0ec 60deg 75deg, 
+      #ffb5b5 75deg 90deg
+    );
+  }
+  100% {
+    background: repeating-conic-gradient(
+      #f9d8d8 0deg 15deg, 
+      #d8f3d8 15deg 30deg, 
+      #fce4b4 30deg 45deg, 
+      #bcd6f7 45deg 60deg, 
+      #f9e0ec 60deg 75deg, 
+      #ffb5b5 75deg 90deg
+    );
+  }
+}
+

@@ -1,0 +1,54 @@
+/* Reset the background and make the menu transparent */
+.menu {
+    background-color: transparent;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu li {
+    margin: 0 10px;
+  }
+  
+  .pill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1); /* Slight transparent background */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;  /* Make it pill-shaped */
+    transition: background-color 0.3s ease;
+  }
+  
+  .pill:hover {
+    background-color: rgba(0, 0, 0, 0.3); /* Darker background on hover */
+  }
+  
+  .pill svg {
+    font-size: 24px;
+    margin-right: 5px; /* Space between icon and pill text */
+  }
+  
+  /* Optional: Change link color on hover */
+  .menu a {
+    text-decoration: none;
+    color: inherit;  /* Keep the color from the pill */
+  }
+  
+  .menu a:hover .pill {
+    background-color: rgba(0, 0, 0, 0.3); /* Hover effect on pill */
+  }
+
+  

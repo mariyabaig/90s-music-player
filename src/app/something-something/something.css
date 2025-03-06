@@ -1,0 +1,123 @@
+/* Pattern 1 (Soft Teal with Light Yellow Stripes) */
+.pattern-1 {
+    background-color: #A4D7C8;
+    opacity: 0.8;
+    background-image: 
+        repeating-linear-gradient(45deg, #FFEB99 0, #FFEB99 10%, transparent 0, transparent 50%);
+    background-position: initial;
+    background-size: 52px 52px;
+}
+
+/* Pattern 2 (Soft Yellow and Peach Stripes) */
+.pattern-2 {
+    background-color: #F9E4A1;
+    background-image: 
+        linear-gradient(90deg, transparent 20%, rgba(255, 178, 105, 0.6) 20%, rgba(255, 178, 105, 0.6) 40%, transparent 40%, transparent 60%, rgba(255, 178, 105, 0.6) 60%, rgba(255, 178, 105, 0.6) 80%, transparent 80%);
+    background-size: 22px 22px;
+}
+
+/* Pattern 3 (Soft Pink and Cream Diagonal Stripes) */
+.pattern-3 {
+    background-color: #F4A1A9;
+    opacity: 0.8;
+    background-image: 
+        linear-gradient(135deg, #F8D4A1 25%, transparent 25%), 
+        linear-gradient(225deg, #F8D4A1 25%, transparent 25%), 
+        linear-gradient(315deg, #F8D4A1 25%, transparent 25%), 
+        linear-gradient(45deg, #F8D4A1 25%, transparent 25%);
+    background-position: initial;
+    background-size: 38px 38px;
+}
+
+/* Pattern 4 (Soft Mint Radial Pattern) */
+.pattern-4 {
+    background-color: #B9F1E2;
+    opacity: 0.65;
+    background-image: 
+        radial-gradient(circle at top right, transparent 10%, #A9E0A0 10%, #A9E0A0 20%, transparent 21%), 
+        radial-gradient(circle at left bottom, transparent 10%, #A9E0A0 10%, #A9E0A0 20%, transparent 21%), 
+        radial-gradient(circle at top left, transparent 10%, #A9E0A0 10%, #A9E0A0 20%, transparent 21%), 
+        radial-gradient(circle at right bottom, transparent 10%, #A9E0A0 10%, #A9E0A0 20%, transparent 21%), 
+        radial-gradient(circle at center, #A9E0A0 30%, transparent 31%);
+    background-position: initial;
+    background-size: 42px 42px;
+}
+
+/* Pattern 5 (Soft Coral with Blush Pink and White Stripes) */
+.pattern-5 {
+    background-color: #F5B0A4;
+    background-image: 
+        linear-gradient(25deg, #F5B0A4 40%, transparent 41%, transparent 59%, #F5B0A4 60%), 
+        linear-gradient(90deg, transparent 45%, rgba(255, 229, 229, 0.6) 45%, rgba(255, 229, 229, 0.6) 55%, transparent 55%, transparent 20%, rgba(255, 229, 229, 0.6) 20%, rgba(255, 229, 229, 0.6) 30%, transparent 30%);
+    background-size: 40px 40px;
+}
+
+/* Pattern 6 (Soft Lavender and Peach Diagonal Stripe) */
+.pattern-6 {
+    background-color: #D2A9D4;
+    background-image: 
+        linear-gradient(0deg, transparent 50%, rgba(254, 182, 139, 0.6) 50%);
+    background-size: 58px 58px;
+}
+
+/* Pattern 7 (Soft Lilac and Light Peach Stripes) */
+.pattern-7 {
+    background-color: #E4D0F0;
+    background-image: 
+        linear-gradient(-45deg, rgba(221, 194, 220, 0.7) 20%, transparent 20% 80%, rgba(221, 194, 220, 0.7) 80% 100%), 
+        linear-gradient(45deg, rgba(221, 194, 220, 0.7) 20%, transparent 20% 80%, rgba(221, 194, 220, 0.7) 80% 100%), 
+        linear-gradient(-45deg, #E4D0F0 33%, transparent 33% 66%, #E4D0F0 66%), 
+        linear-gradient(45deg, transparent 33%, rgba(221, 194, 220, 0.7) 33% 66%, transparent 66%);
+    background-size: 22px 22px;
+}
+
+/* Pattern 8 (Soft Peach and Ivory Stripes) */
+.pattern-8 {
+    background-color: #F9C7A4;
+    opacity: 0.7;
+    background-image: 
+        radial-gradient(circle, #F8F5E4 10%, transparent 11%), 
+        radial-gradient(circle at bottom left, #F8F5E4 5%, transparent 6%), 
+        radial-gradient(circle at bottom right, #F8F5E4 5%, transparent 6%), 
+        radial-gradient(circle at top left, #F8F5E4 5%, transparent 6%), 
+        radial-gradient(circle at top right, #F8F5E4 5%, transparent 6%);
+    background-position: initial;
+    background-size: 70px 70px;
+}
+
+/* Pattern 9 (Soft Green and Beige Diagonal Stripes) */
+.pattern-9 {
+    background-color: #B6D6B6;
+    background-image: 
+        linear-gradient(45deg, rgba(181, 205, 181, 0.6) 20%, transparent 20% 80%, rgba(181, 205, 181, 0.6) 80% 100%), 
+        linear-gradient(-45deg, rgba(181, 205, 181, 0.6) 20%, transparent 20% 80%, rgba(181, 205, 181, 0.6) 80% 100%), 
+        linear-gradient(-45deg, #B6D6B6 33%, transparent 33% 66%, #B6D6B6 66%), 
+        linear-gradient(45deg, transparent 33%, rgba(181, 205, 181, 0.6) 33% 66%, transparent 66%);
+    background-size: 22px 22px;
+}
+
+/* Pattern 10 (Soft Peach and Yellow Diagonal Stripes) */
+.pattern-10 {
+    background-color: #F7C2B5;
+    background-image: 
+        linear-gradient(0deg, transparent 45%, rgba(255, 222, 133, 0.7) 45%, rgba(255, 222, 133, 0.7) 55%, transparent 55%, transparent 20%, rgba(255, 222, 133, 0.7) 20%, rgba(255, 222, 133, 0.7) 30%, transparent 30%);
+    background-size: 32px 32px;
+}
+
+/* Pattern 11 (Soft Violet and Sky Blue Stripes) */
+.pattern-11 {
+    background-color: #C9A2E1;
+    background-image: 
+        linear-gradient(0deg, transparent 20%, rgba(127, 171, 239, 0.6) 20%, rgba(127, 171, 239, 0.6) 40%, transparent 40%, transparent 60%, rgba(127, 171, 239, 0.6) 60%, rgba(127, 171, 239, 0.6) 80%, transparent 80%);
+    background-size: 74px 74px;
+}
+
+/* Pattern 12 (Soft Blue and White Stripes) */
+.pattern-12 {
+    background-color: #A7C7E7;
+    background-image: 
+        repeating-linear-gradient(45deg, #E1EFFF 25%, transparent 25%, transparent 75%, #E1EFFF 75%, #E1EFFF),
+        repeating-linear-gradient(45deg, #E1EFFF 25%, #A7C7E7 25%, #A7C7E7 75%, #E1EFFF 75%, #E1EFFF);
+    background-position: 0 0, 39px 39px;
+    background-size: 78px 78px;
+}

@@ -1,21 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import "tailwindcss";
+/* styles/globals.css */
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Import the comic font from Google Fonts */
+
+
+/* You can also define a global class if you want */
+body {
+    font-family: 'Bangers', cursive;
 }
 
 :root {
-
+  font-family: 'Bangers', cursive;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-   
+    font-family: 'Bangers', cursive;
   }
 }
 
 body {
  
   font-family: Arial, Helvetica, sans-serif;
+}
+
+  
+.stripes{
+
+  background-color: #f2bac0;
+  opacity: 1;
+  background-image: 
+            radial-gradient(circle, #f5f1e0 10%, transparent 11%), 
+            radial-gradient(circle at bottom left, #f5f1e0 5%, transparent 6%), 
+            radial-gradient(circle at bottom right, #f5f1e0 5%, transparent 6%), 
+            radial-gradient(circle at top left, #f5f1e0 5%, transparent 6%), 
+            radial-gradient(circle at top right, #f5f1e0 5%, transparent 6%);
+  background-position: initial;
+  background-size: 100px 100px;
+
 }

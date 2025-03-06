@@ -1,0 +1,524 @@
+/*=========================
+  Variables
+===========================*/
+
+:root {
+    --color-bg: #beefe7;
+    --color-bg-second: #71cbc2;
+    --color-cassette: #344366;
+    --color-border: #192748;
+    --color-text: #021748;
+    --color-reel: #aaa;
+  
+    --border: solid .2rem var(--color-border);
+  
+    --rewind-duration: 9s;
+  }
+  
+  /*=========================
+    Common
+  ===========================*/
+  
+
+  
+  html {
+    font-size: 20px;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    font-family: 'Kanit', sans-serif;
+  }
+  
+/* Apply animated background when music is playing */
+body.playing::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background: repeating-conic-gradient(
+      var(--color-bg) 0deg 15deg,
+      var(--color-bg-second) 15deg 30deg
+    );
+    animation: playing 45s infinite linear;
+}
+
+/* Keyframe animation for rotating effect */
+@keyframes playing {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+  
+  /*=========================
+    Cassette Body
+  ===========================*/
+  
+  .cassette {
+    position: relative;
+    width: 28rem;
+    height: 17.5rem;
+    border: var(--border);
+    border-radius: .5rem;
+    background: var(--color-cassette);
+  }
+  
+  .cassette:after {
+    content: '';
+    display: block;
+    width: 104%;
+    height: 30%;
+    border: var(--border);
+    border-radius: .5rem;
+    background-color: var(--color-cassette);
+    position: absolute;
+    top: 63%;
+    left: -2%;
+    z-index: -1;
+  }
+  
+  .cassette__bottom {
+    width: 60%;
+    height: 26%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -4%;
+  }
+  
+  .cassette__bottom:before,
+  .cassette__bottom:after {
+    content: '';
+    height: 100%;
+    width: 60%;
+    position: absolute;
+    top: 0;
+    border: var(--border);
+    background-color: var(--color-cassette);
+  }
+  
+  .cassette__bottom:before {
+    left: 0;
+    border-right-width: 0;
+    border-radius: .5rem 0 0 .5rem;
+    transform: skew(-15deg);
+  }
+  
+  .cassette__bottom:after {
+    right: 0;
+    border-left-width: 0;
+    border-radius: 0 .5rem .5rem 0;
+    transform: skew(15deg);
+    z-index: -1;
+  }
+  
+  .cassette__line {
+    position: relative;
+    display: block;
+    width: 89%;
+    height: .2rem;
+    background: rgba(255, 255, 255, .1);
+    margin: .5rem auto .6rem;
+    border-radius: .2rem;
+  }
+  
+  /*=========================
+    Openings
+  ===========================*/
+  
+  .opening {
+    border: var(--border);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: .4rem;
+    background: var(--color-bg);
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .opening:nth-of-type(1),
+  .opening:nth-of-type(4) {
+    bottom: 3%;
+    border-radius: 50%;
+  }
+  
+  .opening:nth-of-type(2),
+  .opening:nth-of-type(3) {
+    bottom: 12%;
+  }
+  
+  .opening:nth-of-type(1) {
+    left: 18%;
+  }
+  
+  .opening:nth-of-type(2) {
+    left: 33%;
+  }
+  
+  .opening:nth-of-type(3) {
+    left: 67%;
+  }
+  
+  .opening:nth-of-type(4) {
+    left: 82%;
+  }
+  
+  /*=========================
+    Screws
+  ===========================*/
+  
+  .screw {
+    width: .7rem;
+    height: .7rem;
+    border: solid .1rem var(--color-border);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .screw:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border-left: solid .1rem var(--color-border);
+    transform: translateX(-50%);
+  }
+  
+  .screw:nth-of-type(1),
+  .screw:nth-of-type(2) {
+    top: .7rem;
+  }
+  
+  .screw:nth-of-type(3),
+  .screw:nth-of-type(4) {
+    bottom: .6rem;
+  }
+  
+  .screw:nth-of-type(1),
+  .screw:nth-of-type(3) {
+    left: 2.5%;
+  }
+  
+  .screw:nth-of-type(2),
+  .screw:nth-of-type(4) {
+    left: 97.5%;
+  }
+  
+  .screw:nth-of-type(1) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  .screw:nth-of-type(2) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .screw:nth-of-type(3) {
+    transform: translate(-50%, 50%) rotate(45deg);
+  }
+  
+  .screw:nth-of-type(4) {
+    transform: translate(-50%, 50%) rotate(-45deg);
+  }
+  
+  .cassette__bottom .screw {
+    left: 50%;
+    top: 40%;
+  }
+  
+  /*=========================
+    Label
+  ===========================*/
+  
+  .label {
+    position: relative;
+    border: var(--border);
+    border-radius: .4rem;
+    width: 90%;
+    height: 64%;
+    margin: 0 auto;
+    background: #f5f5f5;
+  }
+  
+  .label:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 14%;
+    height: 55%;
+    width: 100%;
+    background: linear-gradient(
+      #AC1B21 0% 20%,
+      #E14727 20.1% 40%,
+      #F67F21 40.1% 60%,
+      #E0AD3F 60.1% 80%,
+      #F8F39E 80.1%
+    );
+  }
+  
+  /*=========================
+    Title
+  ===========================*/
+  
+  .title {
+    height: 36%;
+    padding-bottom: .5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    letter-spacing: .02em;
+    font-weight: 700;
+  }
+  
+  /*=========================
+    Side
+  ===========================*/
+  
+  .side {
+    position: absolute;
+    left: 7.5%;
+    top: 59%;
+    transform: translate(-50%, -50%);
+    background: var(--color-text);
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*=========================
+    Duration
+  ===========================*/
+  
+  .duration {
+    position: absolute;
+    left: 92.5%;
+    top: 59%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 0 0 .1rem var(--color-text);
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: .06em;
+  }
+  
+  /*=========================
+    Caption
+  ===========================*/
+  
+  .caption {
+    height: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: .7rem;
+    line-height: 1;
+    position: relative;
+  }
+  
+  
+  /*=========================
+    Cutout
+  ===========================*/
+  
+  .cutout {
+    width: 70%;
+    height: 46%;
+    background: var(--color-cassette);
+    border: var(--border);
+    margin: 0 auto;
+    position: relative;
+    border-radius: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  /*=========================
+    Reel
+  ===========================*/
+  
+  .reel {
+    width: 3.5rem;
+    height: 3.5rem;
+    border: var(--border);
+    border-radius: 50%;
+    background: var(--color-border);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .reel:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    border: solid .2rem var(--color-reel);
+  }
+  
+  .reel__prongs,
+  .reel__prongs:before,
+  .reel__prongs:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 3.5rem;
+    width: .4rem;
+    transform: translate(-50%, -50%);
+    border: solid .7rem var(--color-reel);
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+  
+  .reel__prongs {
+    animation: rewind-reel var(--rewind-duration) infinite alternate linear;
+  }
+  
+  .reel__prongs:before,
+  .reel__prongs:after {
+    content: '';
+    display: block;
+  }
+  
+  .reel__prongs:before {
+    transform: translate(-50%, -50%) rotate(-60deg);
+  }
+  
+  .reel__prongs:after {
+    transform: translate(-50%, -50%) rotate(60deg);
+  }
+  
+  @keyframes rewind-reel {
+    from {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+  
+    to {
+      transform: translate(-50%, -50%) rotate(1080deg);
+    }
+  }
+  
+  /*=========================
+    Window
+  ===========================*/
+  
+  .window {
+    width: 40%;
+    height: 68%;
+    border: var(--border);
+    border-radius: .2rem;
+    background: var(--color-bg-second);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .window:before,
+  .window:after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+  }
+  
+  .window:before {
+    height: 100%;
+    top: 0;
+    background: rgba(255, 255, 255, .1);
+  }
+  
+  .window:after {
+    top: 15%;
+    height: 40%;
+    border: solid .3rem rgba(255, 255, 255, .3);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: .5rem;
+  }
+  
+  .window__reel {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .window__reel:first-child {
+    left: -45%;
+  }
+  
+  .window__reel:last-child {
+    left: 145%;
+  }
+  
+  .window__reel:before,
+  .window__reel:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: inherit;
+  }
+  
+  .window__reel:after {
+    width: 100%;
+    height: 100%;
+    background: var(--color-reel);
+  }
+  
+  .window__reel:before {
+    width: 170%;
+    height: 170%;
+    background: #3A111C;
+    animation: rewind-tape infinite var(--rewind-duration) alternate linear;
+  }
+  
+  .window__reel:last-child:before {
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes rewind-tape {
+    from {
+      width: 105%;
+      height: 105%;
+    }
+  
+    to {
+      width: 225%;
+      height: 225%;
+    }
+  }

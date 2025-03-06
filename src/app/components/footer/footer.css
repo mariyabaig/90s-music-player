@@ -1,0 +1,20 @@
+/* Footer styling */
+.footer {
+    background-color: #F1BAC0;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: #f5f0f0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+ 
